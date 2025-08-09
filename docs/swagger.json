@@ -1,0 +1,56 @@
+{
+    "swagger": "2.0",
+    "info": {
+        "description": "This is a sample server for Echo Go Template.",
+        "title": "Echo Go Template",
+        "contact": {},
+        "version": "1.0"
+    },
+    "paths": {
+        "/health": {
+            "get": {
+                "description": "Check if the server is running",
+                "tags": [
+                    "Health"
+                ],
+                "summary": "Health Check",
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "$ref": "#/definitions/response.Response-any"
+                        }
+                    }
+                }
+            }
+        }
+    },
+    "definitions": {
+        "response.Response-any": {
+            "type": "object",
+            "properties": {
+                "data": {},
+                "error": {},
+                "message": {
+                    "type": "string"
+                },
+                "status": {
+                    "$ref": "#/definitions/response.Status"
+                }
+            }
+        },
+        "response.Status": {
+            "type": "string",
+            "enum": [
+                "success",
+                "failed",
+                "error"
+            ],
+            "x-enum-varnames": [
+                "StatusSuccess",
+                "StatusFailed",
+                "StatusError"
+            ]
+        }
+    }
+}

@@ -1,0 +1,38 @@
+definitions:
+  response.Response-any:
+    properties:
+      data: {}
+      error: {}
+      message:
+        type: string
+      status:
+        $ref: '#/definitions/response.Status'
+    type: object
+  response.Status:
+    enum:
+    - success
+    - failed
+    - error
+    type: string
+    x-enum-varnames:
+    - StatusSuccess
+    - StatusFailed
+    - StatusError
+info:
+  contact: {}
+  description: This is a sample server for Echo Go Template.
+  title: Echo Go Template
+  version: "1.0"
+paths:
+  /health:
+    get:
+      description: Check if the server is running
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/response.Response-any'
+      summary: Health Check
+      tags:
+      - Health
+swagger: "2.0"

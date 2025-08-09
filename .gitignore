@@ -1,0 +1,15 @@
+# Environment Variables
+.env*
+!.env.example
+
+# Build Artifacts
+bin/
+
+# Log Files
+log/
+
+# Air Temporary Files
+tmp/
+
+# Asdf Version Manager Files
+.tool-versions
